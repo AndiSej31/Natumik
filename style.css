@@ -1,0 +1,228 @@
+/* 1F4529 47663B E8ECD7 EED3B1 1A3636*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #e8ecd7;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-style: normal;
+}
+.atomic-age-regular {
+  font-family: "Atomic Age", system-ui;
+  font-weight: normal;
+  font-style: normal;
+}
+.rye-regular {
+  font-family: "Rye", serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.astloch-regular {
+  font-family: "Astloch", system-ui;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.astloch-bold {
+  font-family: "Astloch", system-ui;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-weight: normal;
+  font-family: "Rye", serif;
+  font-style: normal;
+  background-color: #1a3636;
+  color: #e8ecd7;
+  text-align: center;
+}
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #b9b996;
+  z-index: 1000;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 0;
+  width: 100%;
+}
+nav a {
+  color: #1a3636;
+  text-decoration: none;
+  width: calc(100% / 3);
+  margin: 0;
+  height: 50px;
+  padding: 1rem;
+  align-self: center;
+  text-align: center;
+}
+nav a:hover {
+  color: #9a5938;
+  background-color: #acac92;
+  transition: all 0.4s;
+}
+
+/* Header */
+header {
+  font-weight: normal;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #1f4529;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.header-title {
+  font-size: larger;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: #699b55;
+  text-decoration: underline;
+}
+.header-subtitle {
+  color: #a97a57;
+  font-size: smaller;
+  font-size: 1.5rem;
+  align-self: flex-end;
+}
+
+/* Main Content */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  /* margin-top: 20px; */
+  background-color: #1a3636;
+}
+.section-flora,
+.section-fauna {
+  display: flex;
+  width: 49%;
+  height: 99%;
+  flex-direction: column; /* Changed to column layout */
+  justify-content: space-between; /* Spreads content vertically */
+  align-items: flex-start; /* Aligns items to the left */
+  border-radius: 10px;
+  background-color: #47663b;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.section-flora:hover,
+.section-fauna:hover {
+  box-shadow: #699b55 0px 0px 10px 3px;
+  transform: scale(1.01);
+  transition: all 0.5s;
+}
+.section-flora:hover::before,
+.section-fauna:hover::before {
+  transition: all 0.5s;
+  filter: blur(5px);
+}
+.section-flora::before,
+.section-fauna::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/fauna\ section\ background.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.section-flora::before {
+  background-image: url(images/flora\ section\ background.jpg);
+}
+
+.section-title {
+  position: relative;
+  z-index: 2;
+  justify-content: flex-start;
+  align-self: center;
+  font-size: 2rem;
+  color: #9a5938;
+  /* background-color: #1f4529; */
+  box-shadow: #1f4529 0px 0px 10px 3px;
+  width: 100%;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+#flora-title {
+  color: #9a5938;
+  text-shadow: #1a3636 1px 1px 1px;
+  border-radius: 10px;
+}
+#fauna-title {
+  color: #699b55;
+  text-shadow: #1a3636 1px 1px 1px;
+
+  border-radius: 10px;
+}
+#fauna-description {
+  color: #699b55;
+  text-shadow: #1a3636 1px 1px 1px;
+  border-radius: 10px;
+}
+
+.section-description {
+  position: relative;
+  z-index: 2;
+  font-size: 2rem;
+  justify-content: flex-end;
+  color: #a97a57;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 5px #b9b996;
+  box-shadow: #b9b996 0px 0px 5px;
+  text-shadow: #1a3636 1px 1px 1px;
+}
+.section-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: 1.5rem;
+  background-color: #9a5938;
+  border-radius: 10px;
+  padding: 10px;
+  width: 98%;
+  margin-top: 10px;
+  margin: 2rem auto;
+}
+.about-title {
+  font-size: 2rem;
+  color: #1f4529;
+  margin-bottom: 2rem;
+}
+.about-description {
+  font-size: 1.5rem;
+  color: #1f4529;
+}
+
+/* Footer */
+.footer-text {
+  color: #9a5938;
+}
