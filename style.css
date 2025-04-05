@@ -55,7 +55,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  box-shadow: #acac92 inset 5px -5px 8px;
   margin-bottom: 0;
   width: 100%;
 }
@@ -64,10 +64,11 @@ nav a {
   text-decoration: none;
   width: calc(100% / 3);
   margin: 0;
-  height: 50px;
+  height: 60px;
   padding: 1rem;
   align-self: center;
   text-align: center;
+  font-size: 1.5em;
 }
 nav a:hover {
   color: #9a5938;
@@ -76,47 +77,68 @@ nav a:hover {
 }
 
 /* Header */
+
 header {
   font-weight: normal;
   margin: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Change to row instead of column */
   justify-content: space-between;
-  background-color: #1f4529;
+  align-items: center;
+  background-color: #b9b996;
   border-radius: 10px;
   padding: 1rem;
 }
-.header-title {
-  font-size: larger;
-  font-weight: normal;
-  font-size: 2rem;
-  margin-right: 1rem;
-  color: #699b55;
-  text-decoration: underline;
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-title #natumik {
+  color: #9a5938;
+  text-decoration: dotted underline;
+  font-size: 2.5em;
 }
 .header-subtitle {
-  color: #a97a57;
-  font-size: smaller;
-  font-size: 1.5rem;
-  align-self: flex-end;
+  font-size: 1.5em;
+  color: #9a5938;
 }
-
+#natumik-logo {
+  align-self: center;
+  margin-left: auto;
+}
 /* Main Content */
 
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  /* margin-top: 20px; */
-  background-color: #1a3636;
+ul,
+li {
+  list-style: none;
 }
+
+#fauna {
+  display: flex;
+  height: 800px;
+  margin: 50px 10px;
+}
+#box1,
+#box2 {
+  width: 50%;
+  height: 90%;
+}
+
+.categories-list * {
+  color: #b9b996;
+  font-size: calc(720px / 10);
+  text-align: left;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
 .section-flora,
 .section-fauna {
   display: flex;
-  width: 49%;
-  height: 99%;
+  /* width: 99%;
+  height: 99%; */
   flex-direction: column; /* Changed to column layout */
   justify-content: space-between; /* Spreads content vertically */
   align-items: flex-start; /* Aligns items to the left */
@@ -126,6 +148,7 @@ header {
   padding: 10px;
   position: relative;
   overflow: hidden;
+  box-shadow: #699b55 0px 0px 10px 1px;
 }
 .section-flora:hover,
 .section-fauna:hover {
@@ -161,11 +184,12 @@ header {
   z-index: 2;
   justify-content: flex-start;
   align-self: center;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #9a5938;
   /* background-color: #1f4529; */
   box-shadow: #1f4529 0px 0px 10px 3px;
   width: 100%;
+
   border-radius: 10px;
   backdrop-filter: blur(5px);
 }
@@ -177,7 +201,6 @@ header {
 #fauna-title {
   color: #699b55;
   text-shadow: #1a3636 1px 1px 1px;
-
   border-radius: 10px;
 }
 #fauna-description {
@@ -203,13 +226,12 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-self: center;
+
   font-size: 1.5rem;
   background-color: #9a5938;
   border-radius: 10px;
   padding: 10px;
   width: 98%;
-  margin-top: 10px;
   margin: 2rem auto;
 }
 .about-title {
