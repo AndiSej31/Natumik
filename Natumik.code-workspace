@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "name": "Natumik",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Natumik",
+    "liveServer.settings.port": 5501
+  }
+}

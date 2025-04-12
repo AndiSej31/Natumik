@@ -6,6 +6,13 @@
   box-sizing: border-box;
   color: #e8ecd7;
 }
+:root{
+  --green: #136f63;
+  --brown: #9a5938;
+  --black: #000f08;
+  --beige: #b9b996;
+  
+}
 h1,
 h2,
 h3,
@@ -15,6 +22,7 @@ h6 {
   font-weight: normal;
   font-style: normal;
 }
+
 .atomic-age-regular {
   font-family: "Atomic Age", system-ui;
   font-weight: normal;
@@ -40,27 +48,40 @@ h6 {
 body {
   font-weight: normal;
   font-family: "Rye", serif;
-  font-style: normal;
-  background-color: #1a3636;
-  color: #e8ecd7;
+  font-style: normal; 
+  background-color: var(--beige);
+  color: var(--beige);
   text-align: center;
 }
+/* body::after {
+  content: '';
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('images/leaf-background.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+} */
 /* Navbar */
 nav {
   position: sticky;
   top: 0;
-  background-color: #b9b996;
+  background-color: var(--beige);
   z-index: 1000;
   padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: #acac92 inset 5px -5px 8px;
+
   margin-bottom: 0;
   width: 100%;
 }
 nav a {
-  color: #1a3636;
+  color: var(--green);
   text-decoration: none;
   width: calc(100% / 3);
   margin: 0;
@@ -69,57 +90,66 @@ nav a {
   align-self: center;
   text-align: center;
   font-size: 1.5em;
+  box-shadow: var(--brown) inset 0px -5px 6px;
+
 }
 nav a:hover {
-  color: #9a5938;
-  background-color: #acac92;
+  color: var(--brown);
+  background-color: var(--beige);
+  box-shadow: var(--brown) inset 0px -5px 6px;
   transition: all 0.4s;
 }
 
 /* Header */
 
 header {
+  position: relative;
   font-weight: normal;
   margin: 1rem;
   display: flex;
   flex-direction: row; /* Change to row instead of column */
   justify-content: space-between;
   align-items: center;
-  background-color: #b9b996;
+ 
   border-radius: 10px;
   padding: 1rem;
+  z-index: 2;
+
 }
 .header-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
 }
 
 .header-title #natumik {
-  color: #9a5938;
+  color: var(--green);
   text-decoration: dotted underline;
   font-size: 2.5em;
+
 }
 .header-subtitle {
   font-size: 1.5em;
-  color: #9a5938;
+  color: var(--brown);
+;
 }
 #natumik-logo {
   align-self: center;
   margin-left: auto;
+  width: 8rem;
+  height: 8rem;
+
 }
 /* Main Content */
 
-ul,
-li {
-  list-style: none;
-}
 
 #fauna {
   display: flex;
   height: 800px;
-  margin: 50px 10px;
+
 }
+
 #box1,
 #box2 {
   width: 50%;
@@ -127,124 +157,549 @@ li {
 }
 
 .categories-list * {
-  color: #b9b996;
-  font-size: calc(720px / 10);
+  color: var(--brown);
+  font-size: 2em;
   text-align: left;
   justify-content: space-around;
-  padding: 1rem;
+  line-height: 7.5rem;
 }
+/*
+ MO HARO NI ANIMACION I FORT MA MTEK O ANDI KET SVG TE LISTES KUR DE BOJSH HOVER TE 
+BOHEN 2 ENE NJO DE DALE KA E MAJSHTA ENE DE BOHEN TU DIJAT KA 45 SHKALL EN TE DUKET SI LULE
+ */
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.categories-list li a {
+  display: flex; /* Makes the <a> a flex container */
+  justify-content: flex-start; /* Aligns content to the left */
+  align-items: center; /* Vertically centers the content */
+  position: relative; /* Ensures the pseudo-element is positioned relative to the <a> */
+  padding-left: 2rem; /* Adds space for the SVG on the left */
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits the text color */
+}
+
+
+.categories-list li a::before {
+  content: ''; /* Adds the SVG as a pseudo-element */
+  position: absolute;
+  right: 0; /* Positions the SVG to the left of the text */
+  width: 5rem; /* Adjust the size of the SVG */
+  height: 5rem;
+  background-image: url('images/Leaf Vector Icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.categories-list li a:hover{
+  border-radius: 15px;
+  box-shadow: inset 5px -5px 8px #c3c39b;
+
+  transition: all 0.3s ease-in-out;
+}
+.categories-list li a:hover::before {
+  transform: rotate(-45deg) scale(1); /* Rotates the original SVG */
+  transition: transform 0.3s ease; /* Smooth transition for the rotation */
+}
+.categories-list li a:hover::before {
+  transform: rotate(-45deg) scale(1); /* Rotates the original SVG */
+  transition: transform 0.3s ease; /* Smooth transition for the rotation */
+}
+
+.categories-list li a::before {
+  transform: rotate(0deg) scale(1); /* Ensures it returns to the original state */
+  transition: transform 0.3s ease; /* Smooth transition for returning */
+}
+
+
 
 .section-flora,
 .section-fauna {
   display: flex;
-  /* width: 99%;
-  height: 99%; */
   flex-direction: column; /* Changed to column layout */
   justify-content: space-between; /* Spreads content vertically */
   align-items: flex-start; /* Aligns items to the left */
   border-radius: 10px;
-  background-color: #47663b;
+  /* background-color: var(--brown); */
   margin: 10px;
   padding: 10px;
   position: relative;
   overflow: hidden;
-  box-shadow: #699b55 0px 0px 10px 1px;
+  box-shadow: var(--brown) 0px 0px 10px 1px;
 }
-.section-flora:hover,
-.section-fauna:hover {
-  box-shadow: #699b55 0px 0px 10px 3px;
-  transform: scale(1.01);
-  transition: all 0.5s;
-}
-.section-flora:hover::before,
-.section-fauna:hover::before {
-  transition: all 0.5s;
-  filter: blur(5px);
-}
-.section-flora::before,
-.section-fauna::before {
-  content: "";
+.section-flora::before{
+  content: '';
   position: absolute;
-  background-image: url(images/fauna\ section\ background.jpg);
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+
+  background-size: cover;
+  background-position: center;
+/* Adjust the opacity as needed */
+  z-index: -1; /* Keeps it behind other elements */
 }
-.section-flora::before {
-  background-image: url(images/flora\ section\ background.jpg);
+.image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+a{
+  text-decoration: none;
 }
 
+#eagle {
+  position: absolute;
+  top: 20%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%) scaleX(-1); /* Centers the element and flips it horizontally */
+  width: 50%; /* Adjust the size as needed */ 
+  height: auto;
+  overflow: hidden;
+  z-index: -1; /* Keeps it behind other elements */
+}
+
+#bear {
+  position: absolute;
+  bottom: 0; /* Aligns the bear to the bottom */
+  right: 0; /* Aligns the bear to the right */
+  transform: scaleX(-1); /* Flips the bear horizontally */
+  width: 70%; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  overflow: hidden;
+  z-index: -2; /* Keeps it behind other elements but above the eagle */
+}
+#lizard {
+  position: absolute;
+  left: 0; /* Aligns the lizard to the left */
+  top: 0;
+  transform: scale(-1, -1); /* Flips the lizard both horizontally and vertically */
+  width: 70%; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  overflow: hidden;
+  z-index: -2; /* Keeps it behind other elements but above the eagle */
+}
+img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio for all images */
+  object-fit: cover; /* Ensures the image covers its container */
+}
+
+.section-flora{
+  height: 800px;
+  margin: 2rem;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+.section-flora::before {
+  background-image: url('images/Natumik\ Image\ No\ Background.png');
+  opacity: 0.5; 
+}
 .section-title {
   position: relative;
   z-index: 2;
   justify-content: flex-start;
   align-self: center;
   font-size: 3rem;
-  color: #9a5938;
-  /* background-color: #1f4529; */
-  box-shadow: #1f4529 0px 0px 10px 3px;
+  color: var(--brown);
+  box-shadow: var(--brown) 0px 0px 10px 3px;
   width: 100%;
-
   border-radius: 10px;
   backdrop-filter: blur(5px);
 }
+
 #flora-title {
-  color: #9a5938;
-  text-shadow: #1a3636 1px 1px 1px;
+  color: var(--green);
+  text-shadow: var(--black) 1px 1px 1px;
   border-radius: 10px;
 }
+
 #fauna-title {
-  color: #699b55;
-  text-shadow: #1a3636 1px 1px 1px;
+  color: var(--green);
+  text-shadow: var(--black) 1px 1px 1px;
   border-radius: 10px;
 }
+
 #fauna-description {
-  color: #699b55;
-  text-shadow: #1a3636 1px 1px 1px;
+  color: var(--green);
+  text-shadow: var(--black) 1px 1px 1px;
+  border-radius: 10px;
+}
+#flora-description {
+  color: var(--green);
+  text-shadow: var(--black) 1px 1px 1px;
   border-radius: 10px;
 }
 
 .section-description {
   position: relative;
   z-index: 2;
-  font-size: 2rem;
+  font-size: 1.8rem;
   justify-content: flex-end;
-  color: #a97a57;
+  color: var(--brown); /* This color is not defined in variables, consider adding it */
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: 5px #b9b996;
-  box-shadow: #b9b996 0px 0px 5px;
-  text-shadow: #1a3636 1px 1px 1px;
+  border: 5px var(--beige);
+  /* box-shadow: var(--beige) 0px 0px 5px; */
+  /* text-shadow: var(--black) 1px 1px 1px; */
 }
+
 .section-about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   font-size: 1.5rem;
-  background-color: #9a5938;
+  /* background-color: var(--brown); */
   border-radius: 10px;
   padding: 10px;
   width: 98%;
   margin: 2rem auto;
 }
+
 .about-title {
   font-size: 2rem;
-  color: #1f4529;
+  color: var(--green);
   margin-bottom: 2rem;
 }
+
 .about-description {
   font-size: 1.5rem;
-  color: #1f4529;
+  color: var(--green);
 }
 
-/* Footer */
 .footer-text {
-  color: #9a5938;
+  color: var(--brown);
 }
+
+.category-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--brown) 0px 0px 10px 1px;
+  background-color: var(--beige);
+}
+.category-section:hover{
+
+}
+
+.category-section:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.category-section h2 {
+  font-size: 2.5rem;
+  color: var(--green);
+  text-shadow: var(--black) 1px 1px 1px;
+  margin: 2rem;
+}
+
+.category-section p {
+  font-size: 1.5rem;
+  color: var(--brown);
+  line-height: 1.8;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.category-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--brown) 0px 0px 10px 1px;
+}
+
+.category-section:nth-child(even) img {
+  order: 2;
+}
+
+.category-section:nth-child(odd) img {
+  order: 1;
+}
+
+.category-section:nth-child(even) p,
+.category-section:nth-child(even) h2 {
+  text-align: left;
+}
+
+.category-section:nth-child(odd) p,
+.category-section:nth-child(odd) h2 {
+  text-align: right;
+}
+
+
+
+
+
+
+#leaves {
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  text-align: right;
+}
+
+#leaves i {
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  background: linear-gradient(to bottom right, var(--green), var(--brown)); /* #005600 is not defined in variables */
+  transform: skew(20deg);
+  border-radius: 5% 40% 70%;
+  box-shadow: inset 0px 0px 1px #222;
+  border: 1px solid #333;
+  z-index: -1;
+  -webkit-animation: falling 5s 0s infinite;
+}
+
+#leaves i:nth-of-type(2n) {
+  -webkit-animation: falling2 5s 0s infinite;
+}
+
+#leaves i:nth-of-type(3n) {
+  -webkit-animation: falling3 5s 0s infinite;
+}
+
+#leaves i:before {
+  position: fixed;
+  content: '';
+  top: 117px;
+  right: 9px;
+  height: 27px;
+  width: 32px;
+  transform: rotate(49deg);
+  border-radius: 0% 15% 15% 0%;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  border-left: 0px solid #222;
+  border-right: 1px solid #222;
+  background: linear-gradient(to right, rgba(0, 100, 0, 1), #005600); /* #005600 is not defined in variables */
+  z-index: -1;
+}
+
+#leaves i:after {
+  content: '';
+  height: 125px;
+  width: 10px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  display: block;
+  transform: rotate(125deg);
+  position: absolute;
+  left: 85px;
+  border-radius: 50%;
+}
+
+
+#leaves i:nth-of-type(n)    { height:23px; width:30px; }
+#leaves i:nth-of-type(n):before { width:7px; height:5px; top:17px; right:1px; }
+#leaves i:nth-of-type(n):after { width:2px; height:17px; left: 12px; top:0px; }
+
+#leaves i:nth-of-type(2n+1)    { height:11px; width:16px; }
+#leaves i:nth-of-type(2n+1):before { width:4px; height:3px; top:7px; right:0px; }
+#leaves i:nth-of-type(2n+1):after { width:2px; height:6px; left: 5px; top:1px; }
+
+#leaves i:nth-of-type(3n+2)  { height:17px; width:23px; }
+#leaves i:nth-of-type(3n+2):before  { height:4px; width:4px; top:12px; right:1px; }
+#leaves i:nth-of-type(3n+2):after  { height:10px; width:2px; top:1px; left:8px; }
+
+#leaves i:nth-of-type(n)   { -webkit-animation-delay: 1.9s;}
+#leaves i:nth-of-type(2n)  { -webkit-animation-delay: 3.9s;}
+#leaves i:nth-of-type(3n)  { -webkit-animation-delay: 2.3s;}
+#leaves i:nth-of-type(4n)  { -webkit-animation-delay: 4.4s;}
+#leaves i:nth-of-type(5n)  { -webkit-animation-delay: 5s;  }
+#leaves i:nth-of-type(6n)  { -webkit-animation-delay: 3.5s;}
+#leaves i:nth-of-type(7n)  { -webkit-animation-delay: 2.8s;}
+#leaves i:nth-of-type(8n)  { -webkit-animation-delay: 1.5s;}
+#leaves i:nth-of-type(9n)  { -webkit-animation-delay: 3.3s;}
+#leaves i:nth-of-type(10n) { -webkit-animation-delay: 2.5s;}
+#leaves i:nth-of-type(11n) { -webkit-animation-delay: 1.2s;}
+#leaves i:nth-of-type(12n) { -webkit-animation-delay: 4.1s;}
+#leaves i:nth-of-type(13n) { -webkit-animation-delay: 1s;  }
+#leaves i:nth-of-type(14n) { -webkit-animation-delay: 4.7s;}
+#leaves i:nth-of-type(15n) { -webkit-animation-delay: 3s;  }
+
+#leaves i:nth-of-type(n)    { background: linear-gradient(to bottom right, var(--green), var(--green)); }
+#leaves i:nth-of-type(2n+2)  { background: linear-gradient(to bottom right, var(--brown), var(--green)); }
+#leaves i:nth-of-type(4n+1)  { background: linear-gradient(to bottom right,var(--green), var(--green)); }
+
+#leaves i:nth-of-type(n)    { opacity: .7;}
+#leaves i:nth-of-type(3n+1)  { opacity: .5;}
+#leaves i:nth-of-type(3n+2)  { opacity: .3;}
+
+#leaves i:nth-of-type(n)    {transform: rotate(180deg);}
+
+
+#leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
+
+@-webkit-keyframes falling {
+    
+    0% {
+        -webkit-transform:
+            translate3d(300,0,0)
+            rotate(0deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-350px,700px,0)
+            rotate(90deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling3 {
+     0% {
+        -webkit-transform:
+            translate3d(0,0,0)
+            rotate(-20deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-230px,640px,0)
+            rotate(-70deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling2 {
+     0% {
+        -webkit-transform:
+            translate3d(0,0,0)
+            rotate(90deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-400px,680px,0)
+            rotate(0deg);
+        opacity: 0;
+    }
+  }
+
+
+  .category-section {
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .category-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .category-section::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('images/Leaf Vector Icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: -1;
+  }
+
+  .category-section:nth-of-type(odd):hover::after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+
+  .category-section:nth-of-type(even):hover::after {
+    opacity: 1;
+    transform: rotate(-45deg) scale(1);
+  }
+
+  .category-section:nth-of-type(odd)::after {
+    top: 10px;
+    left: 10px;
+  }
+
+  .category-section:nth-of-type(even)::after {
+    top: 10px;
+    right: 10px;
+  }
+
+  .category-section.collapsible {
+    max-height: 100px;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+  }
+
+  .category-section.collapsible.expanded {
+    max-height: 500px;
+  }
+
+  .did-you-know {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+    color: var(--brown);
+  }
+  .did-you-know.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+
+
+
+  .mammal-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 1rem 1rem;
+  }
+
+  .mammal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+  }
+
+  .mammal-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .mammal-item span {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--brown);
+    text-align: center;
+  }

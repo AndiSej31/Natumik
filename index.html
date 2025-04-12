@@ -15,13 +15,15 @@
       href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Atomic+Age&family=Rye&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js"></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav id="main-nav" class="navigation">
-      <a href="#flora" class="nav-link">Flora</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#fauna" class="nav-link">Fauna</a>
+      <a href="fauna.html" class="nav-link">Fauna</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="flora.html" class="nav-link">Flora</a>
     </nav>
     <main id="content" class="main-content">
       <header id="main-header" class="header">
@@ -31,11 +33,49 @@
             Explore the rich biodiversity of Macedonia's natural world
           </h3>
         </div>
-        <img id="natumik-logo" src="" alt="Natumik logo" />
+        <img
+          id="natumik-logo"
+          src="images/Material Icons Pets.svg"
+          alt="Natumik logo"
+        />
       </header>
+      <div id="leaves">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
       <div id="fauna">
         <div id="box1" class="section-fauna">
-          <h2 class="section-title"><span id="fauna-title">Fauna</span></h2>
+          <h2 class="section-title">
+            <a href="fauna.html" id="fauna-title-link"
+              ><span id="fauna-title">Fauna</span></a
+            >
+          </h2>
+          <div class="img-wrapper">
+            <img id="bear" src="images/bear-face.png" alt="bear" />
+            <img
+              id="eagle"
+              src="images/Eagle Drawing High Contrast.png"
+              alt="eagle"
+            />
+            <img
+              id="lizard"
+              src="images/Teodor Kuduschiev Image.png"
+              alt="lizard"
+            />
+          </div>
           <p class="section-description" id="fauna-description">
             The fauna of Macedonia includes a wide array of mammals, birds,
             reptiles, and insects. From bears and wolves to rare bird species,
@@ -44,15 +84,23 @@
         </div>
         <div id="box2">
           <ul class="categories-list" id="fauna-categories-list">
-            <li>Mammals</li>
+            <li><a href="">Mammals</a></li>
+            <li><a href="">Birds</a></li>
+            <li><a href="">Fish</a></li>
+            <li><a href="">Reptiles</a></li>
+            <li><a href="">Amphibians</a></li>
+            <li><a href="">Insects</a></li>
+            <!-- <li>Mammals</li>
             <li>Birds</li>
             <li>Fish</li>
             <li>Reptiles</li>
             <li>Amphibians</li>
-            <li>Insects</li>
+            <li>Insects</li> -->
           </ul>
         </div>
       </div>
+      <div id="did-you-know-fauna" class="did-you-know"></div>
+
       <!-- <div id="box3">
           <ul class="categories-list" id="flora-categories-list">
             <li>Trees</li>
@@ -63,13 +111,18 @@
           </ul>
         </div> -->
       <div id="box3" class="section-flora">
-        <h2 class="section-title"><span id="flora-title">Flora</span></h2>
+        <h2 class="section-title">
+          <a href="flora.html" id="flora-title-link"
+            ><span id="flora-title">Flora</span></a
+          >
+        </h2>
         <p class="section-description" id="flora-description">
           Macedonia is home to a diverse range of plant species, including
           endemic and rare varieties. Explore the forests, meadows, and wetlands
           to discover the unique flora of this region.
         </p>
       </div>
+      <div id="did-you-know-flora" class="did-you-know"></div>
 
       <section id="about" class="section-about">
         <h2 class="about-title">About</h2>
